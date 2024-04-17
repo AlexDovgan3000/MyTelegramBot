@@ -1,12 +1,12 @@
-# Етап 1: Збирання за допомогою офіційного образу Go
+# Використання офіційного образу Golang як базового образу для збірки
 FROM golang:1.16 as builder
 WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
-RUN make build
+RUN go build -o myapp main.go
 
-# Етап 2: Налаштування фінального образу
+# Налаштування остаточного образу, який використовуватиметься для запуску додатку
 FROM debian:buster
 COPY --from=builder /app/myapp /app/myapp
 WORKDIR /app
