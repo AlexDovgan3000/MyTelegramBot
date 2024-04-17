@@ -9,4 +9,6 @@
 ```bash
 git clone https://github.com/AlexDovgan3000/MyTelegramBot.git
 cd MyTelegramBot
+Конфігурація
+export TELE_TOKEN='your_telegram_bot_token_here'
 
